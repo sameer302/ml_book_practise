@@ -32,8 +32,8 @@ print(timeit.timeit(lambda: vectorized(x, w), number=10))
 '''
 NumPy uses CPU optimized math instructions hence it is faster than the other two ways. Even though NumPy and Python for-loops run on the same CPU, cache, and RAM, the speed 
 difference happens because NumPy uses the hardware much more efficiently. Python loops are slow due to interpreter overhead, repeated type checking, and object handling, 
-while NumPy performs operations in optimized compiled C code, uses vectorized CPU instructions (SIMD), accesses memory more efficiently with contiguous arrays, and relies on highly 
-optimized math libraries. The overall speed gain is not due to one factor but the **combined effect of multiple low-level optimizations working together**.
+while NumPy performs operations in optimized compiled C/ FORTRAN code, uses vectorized CPU instructions (SIMD), accesses memory more efficiently with contiguous arrays, and relies on highly 
+optimized math libraries (Basic Linear Algebra Subprograms/BLAS, Linear Algebra Package). The overall speed gain is not due to one factor but the **combined effect of multiple low-level optimizations working together**.
 
 By default, normal Python and NumPy code always run on the CPU, and GPU is used only if you explicitly use GPU-enabled libraries like PyTorch, TensorFlow, JAX, or CuPy and 
 move data/models to the GPU. You can check CPU usage using `top` or `htop`, and GPU usage (for NVIDIA GPUs) using `nvidia-smi`, which shows active processes and memory usage. 
