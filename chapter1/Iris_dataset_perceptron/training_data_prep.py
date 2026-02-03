@@ -1,7 +1,23 @@
 import matplotlib.pyplot as plt # plotting library
 import numpy as np
 from load_iris_dataset import df
-# to make a folder into a module we need to have __init__.py file in that folder.
+'''
+While using imports, its better to have __init__.py file in the folder from which we are importing. This treats that folder
+as a module or package. Further, if we have subfolders inside that folder, then those subfolders should also have __init__.py file.
+This ensures that all the subfolders are also treated as sub-modules or sub-packages and we can import from them without any issues.
+
+Further there are two types of imports:
+1. Absolute imports: In this we provide the complete path of the module from the root folder.
+   e.g., from chapter1.Iris_dataset_perceptron.load_iris_dataset import df
+2. Relative imports: In this we provide the path of the module relative to the current module.
+   e.g., from .load_iris_dataset import df
+Here we are using relative import.
+
+Also whenever we use relative or absolute imports, a file named __pycache__ is created in the folder from which we are importing.
+This file contains the compiled bytecode of the imported module. This helps in faster loading of the module in subsequent imports.
+'''
+
+# to convert a folder into a module we need to have __init__.py file in that folder, but if we are importing from the same
 
 # select setosa and versicolor
 y = df.iloc[0:100, 4].values
